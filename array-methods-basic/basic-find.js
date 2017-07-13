@@ -9,13 +9,19 @@
 var WORD_TO_FIND = 'Lorem';
 
 var findMessages = function(messages) {
-    var result = [];
-    for(var i = 0; i < messages.length; i++){
-        var message = messages[i];
-        if(message.text.match(WORD_TO_FIND)){
-            return message
-        }
-    }
+    // var result = [];
+    // for(var i = 0; i < messages.length; i++){
+    //     var message = messages[i];
+    //     if(message.text.match(WORD_TO_FIND)){
+    //         return message
+    //     }
+    // }
+  function checkHasword(message) {
+      return message.text.match(WORD_TO_FIND)
+  }   
+     return messages.find(checkHasword)
+
 };
+
 
 module.exports = findMessages;
